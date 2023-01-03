@@ -12,11 +12,11 @@ const regionSlice = createSlice({
         },
         searchCountry(state, action) {
             const value = action.payload
-            state.countries = state.countries.filter((country)=>{return country.name.startsWith(value)})
+            state.countries = state.countries.filter((country)=>{return country.name.toLowerCase().startsWith(value.toLowerCase())})
         },
         filterByContinent(state, action) {
             const value = action.payload
-            state.countries = state.countries.filter((country)=>{return country.continent.includes(value)})
+            state.countries = state.countries.filter((country)=>{return country.continent.toLowerCase().includes(value.toLowerCase())})
         }
     }
 })
