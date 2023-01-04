@@ -17,7 +17,7 @@ const Home = () => {
     <div className={styles['country-div']}>
       {countries.map((country) => {
         return (
-          <div className={styles["country-card"]}>
+          <div key={country.name} className={styles["country-card"]}>
             <div className={styles.flags}>
               <img src={country.flag} alt="flag" className={styles.flag} />
             </div>

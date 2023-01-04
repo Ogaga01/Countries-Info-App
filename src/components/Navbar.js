@@ -6,6 +6,7 @@ import Home from "./Home";
 import styles from '../sass/_navbar.module.scss'
 
 const Navbar = () => {
+
     const [searchValue, setSearchValue] = useState("");
     
     const dispatch = useDispatch()
