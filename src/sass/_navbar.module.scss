@@ -1,0 +1,50 @@
+@import './mixins';
+
+header {
+    display: flex;
+    padding: 2rem 4rem;
+    align-items: center;
+    background-color: #fff;
+}
+
+header nav {
+    width: 35%;
+}
+
+header nav a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.select {
+    width: 30%;
+}
+
+.select label {
+    font-size: 1.7rem;
+    margin-right: 1.3rem;
+}
+
+.select select {
+    height: 3rem;
+    width: 50%;
+    border: none;
+    background-color: lightgray;
+}
+
+.select select option {
+    font-size: 1.5rem;
+}
+
+.search {
+    width: 20%;
+    margin-left: 15%;
+}
+
+.search input {
+    width: 95%;
+    height: 3rem;
+    background-color: lightgray;
+}

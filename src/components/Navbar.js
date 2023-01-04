@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink, Route, Routes } from "react-router-dom";
 import { regionActions } from "../store/RegionSlice";
 import Home from "./Home";
+import styles from '../sass/_navbar.module.scss'
 
 const Navbar = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -28,7 +29,7 @@ const Navbar = () => {
         <nav>
           <NavLink to="/">Countries Info</NavLink>
               </nav>
-              <div>
+              <div className={styles.select}>
                   <label htmlFor="continent">Filter by Continents</label>
                   <select id="continents" name="continents" onChange={handleOption}>
                       <option value='all'>All</option>
@@ -40,7 +41,7 @@ const Navbar = () => {
                       <option value='oceania'>Oceania</option>
                   </select>
               </div>
-        <div>
+        <div className={styles.search}>
           <input
             type="text"
             value={searchValue}
