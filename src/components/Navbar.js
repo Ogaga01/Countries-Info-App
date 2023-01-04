@@ -15,14 +15,31 @@ const Navbar = () => {
       console.log(e.target.value)
       
         dispatch(regionActions.searchCountry(searchValue))
-  };
+    };
+    
+    const handleOption = (e) => {
+        dispatch(regionActions.filterByContinent(e.target.value))
+        console.log(e.target.value)
+    }
 
   return (
     <>
       <header>
         <nav>
           <NavLink to="/">Countries Info</NavLink>
-        </nav>
+              </nav>
+              <div>
+                  <label htmlFor="continent">Filter by Continents</label>
+                  <select id="continents" name="continents" onChange={handleOption}>
+                      <option value='all'>All</option>
+                      <option value='africa'>Africa</option>
+                      <option value='asia'>Asia</option>
+                      <option value='europe'>Europe</option>
+                      <option value='north america'>North America</option>
+                      <option value='south america'>South America</option>
+                      <option value='oceania'>Oceania</option>
+                  </select>
+              </div>
         <div>
           <input
             type="text"

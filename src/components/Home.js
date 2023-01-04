@@ -7,7 +7,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(fetchAllCountries())
-    }, [dispatch])
+    })
 
     return (
         <div>
