@@ -1,0 +1,39 @@
+@import './mixins';
+
+.country-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.country-card {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-top: 5rem;
+}
+
+.flags {
+    width: 100%;
+    height: 25rem;
+}
+
+.flag {
+    height: 25rem;
+    width: 100%;
+}
+
+.name {
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 2rem;
+    color: #000;
+}
+
+.continent {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    color: #000;
+}

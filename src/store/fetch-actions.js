@@ -13,7 +13,7 @@ export const fetchAllCountries = () => {
                 name: el.name.common,
                 continent: el.continents[0],
                 capitalCity: el.capital,
-                flag: el.flags.svg
+                flag: el.flags.png
             }
             dispatch(regionActions.addCountry(country))
         })
