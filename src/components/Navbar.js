@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { regionActions } from "../store/RegionSlice";
-import Home from "./Home";
 import styles from '../sass/_navbar.module.scss'
 
 const Navbar = () => {
@@ -28,7 +27,7 @@ const Navbar = () => {
     <>
       <header>
         <nav>
-          <NavLink to="/">Countries Info</NavLink>
+          <NavLink to="/*">Countries Info</NavLink>
               </nav>
               <div className={styles.select}>
                   <label htmlFor="continent">Filter by Continents</label>
@@ -51,9 +50,6 @@ const Navbar = () => {
           />
         </div>
       </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
     </>
   );
 };
