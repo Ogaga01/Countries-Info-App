@@ -26,7 +26,7 @@ const Home = () => {
               <div className={styles["country-info"]}>
                 <h1 className={styles.name}>{name}</h1>
                 <h3 className={styles.continent}>{continent}</h3>
-                <Link to={name}>More info</Link>
+                <Link className={styles.link} to={name}>More info</Link>
               </div>
             </div>
           );
