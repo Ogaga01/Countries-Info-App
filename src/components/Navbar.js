@@ -27,7 +27,7 @@ const Navbar = () => {
     <>
       <header>
         <nav>
-          <NavLink to="/*">Countries Info</NavLink>
+          <NavLink to="/">Countries Info</NavLink>
               </nav>
               <div className={styles.select}>
                   <label htmlFor="continent">Filter by Continents</label>

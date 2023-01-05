@@ -32,7 +32,7 @@ export const fetchSpecificCountry = (countryName) => {
         
             const country = {
               name: data[0].name.common,
-              flag: data[0].flags.svg,
+              flag: data[0].flags.png,
               population: data[0].population,
               capital: data[0].capital[0],
               map: data[0].maps.googleMaps,
