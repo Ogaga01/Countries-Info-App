@@ -6,16 +6,32 @@
     margin: 10vh auto;
     background-color: lightgrey;
     display: flex;
+
+    @include respond(tab-port){
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
 }
 
 .map {
     width: 33.3%;
     height: 100%;
+
+    @include respond(tab-port){
+        width: 100%;
+        height: 33.3%
+    }
 }
 
 .flag {
     width: 33.3%;
     height: 100%;
+
+    @include respond(tab-port){
+        width: 100%;
+        height: 33.3%
+    }
 }
 
 .flags {
@@ -30,6 +46,11 @@
     width: 33.3%;
     padding: 3rem;
     margin-top: 6rem;
+
+    @include respond(tab-port){
+        width: 100%;
+        height: 33.3%
+    }
 }
 
 .name {

@@ -12,6 +12,14 @@
     flex-direction: column;
     background-color: #fff;
     margin-top: 5rem;
+
+    @include respond(tab-port){
+        width: 40%;
+    }
+
+    @include respond(mini-phone){
+        width: 65%;
+    }
 }
 
 .flags {
