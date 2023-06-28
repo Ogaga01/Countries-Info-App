@@ -6,7 +6,6 @@ export const fetchAllCountries = () => {
     const response = await fetch("https://restcountries.com/v3.1/all");
     const data = await response.json();
 
-
     const countries = [];
 
     data.forEach((el) => {
@@ -61,5 +60,45 @@ export const searchCountry = (countryName) => {
       countries.push(country);
     });
     dispatch(regionActions.addCountry(countries));
+  };
+};
+
+export const filteredCountries = (continent) => {
+  return async (dispatch) => {
+    const response = await fetch("https://restcountries.com/v3.1/all");
+    const data = await response.json();
+
+    const countries = [];
+
+    if (continent.toLowerCase() === 'all'){
+        const countries = [];
+
+    data.forEach((el) => {
+      const country = {
+        name: el.name.common,
+        continent: el.continents[0],
+        capitalCity: el.capital,
+        flag: el.flags.png,
+      };
+      countries.push(country);
+    });
+    dispatch(regionActions.addCountry(countries));
+    }else {
+        const filtered = data.filter((country) => {
+            return country.continents[0].toLowerCase() === continent.toLowerCase();
+          });
+          console.log(filtered);
+      
+          filtered.forEach((el) => {
+            const country = {
+              name: el.name.common,
+              continent: el.continents[0],
+              capitalCity: el.capital,
+              flag: el.flags.png,
+            };
+            countries.push(country);
+          });
+          dispatch(regionActions.addCountry(countries));
+    }
   };
 };

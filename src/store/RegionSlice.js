@@ -11,16 +11,6 @@ const regionSlice = createSlice({
       // state.countries.push(countries);
       state.countries = countries;
     },
-    filterByContinent(state, action) {
-      const value = action.payload;
-      if (value.toLowerCase() === "all") {
-        return state.countries;
-      } else {
-        state.countries = state.countries.filter((country) => {
-          return country.continent.toLowerCase() === value.toLowerCase();
-        });
-      }
-    },
   },
 });
 

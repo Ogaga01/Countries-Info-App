@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { regionActions } from "../store/RegionSlice";
-import { searchCountry } from "../store/fetch-actions";
+import { filteredCountries, searchCountry } from "../store/fetch-actions";
 import styles from "../sass/_navbar.module.scss";
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    dispatch(regionActions.filterByContinent(filterValue));
+    dispatch(filteredCountries(filterValue));
   }, [dispatch, filterValue]);
 
   return (
