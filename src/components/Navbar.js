@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { regionActions } from "../store/RegionSlice";
 import { filteredCountries, searchCountry } from "../store/fetch-actions";
 import styles from "../sass/_navbar.module.scss";
 
