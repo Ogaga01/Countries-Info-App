@@ -28,7 +28,9 @@ const Country = () => {
       <div className={styles["country-info"]}>
         <h2 className={styles.name}>Name: {country.name} </h2>
         <h2 className={styles.capital}>Capital City: {country.capital} </h2>
-        <h2 className={styles.population}>Population: {(country.population/ 1000000).toFixed(1)}M people </h2>
+        <h2 className={styles.population}>
+          Population: {(country.population / 1000000).toFixed(1)}M people{" "}
+        </h2>
       </div>
     </div>
   );
