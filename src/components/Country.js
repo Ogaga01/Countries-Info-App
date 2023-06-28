@@ -14,7 +14,6 @@ const Country = () => {
 
   useEffect(() => {
     dispatch(fetchSpecificCountry(params.name));
-    console.log(params.name);
   }, [dispatch, params.name]);
 
   return (

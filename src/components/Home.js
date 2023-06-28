@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchAllCountries,
-  fetchSpecificCountry,
-} from "../store/fetch-actions";
+import { fetchAllCountries } from "../store/fetch-actions";
 import styles from "../sass/_home.module.scss";
 import { Link } from "react-router-dom";
 
@@ -13,8 +10,6 @@ const Home = () => {
   });
 
   const dispatch = useDispatch();
-
-  console.log(dispatch(fetchSpecificCountry("niger")));
 
   useEffect(() => {
     dispatch(fetchAllCountries());

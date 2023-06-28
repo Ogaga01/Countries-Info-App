@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { regionActions } from "../store/RegionSlice";
-import { fetchSpecificCountry } from "../store/fetch-actions";
+import { searchCountry } from "../store/fetch-actions";
 import styles from "../sass/_navbar.module.scss";
 
 const Navbar = () => {
@@ -15,9 +15,13 @@ const Navbar = () => {
     setSearchValue(e.target.value);
   };
 
+  console.log(searchValue);
+
   useEffect(() => {
     // dispatch(regionActions.searchCountry(searchValue));
-    dispatch(fetchSpecificCountry(searchValue));
+    // if (searchValue.length < 3) return;
+
+    dispatch(searchCountry(searchValue));
   }, [dispatch, searchValue]);
 
   const handleOption = (e) => {

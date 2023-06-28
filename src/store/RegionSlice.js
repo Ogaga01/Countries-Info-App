@@ -7,14 +7,9 @@ const regionSlice = createSlice({
   },
   reducers: {
     addCountry(state, action) {
-      const country = action.payload;
-      state.countries.push(country);
-    },
-    searchCountry(state, action) {
-      const value = action.payload;
-      state.countries = state.countries.filter((country) => {
-        return country.name.toLowerCase().startsWith(value.toLowerCase());
-      });
+      const countries = action.payload;
+      // state.countries.push(countries);
+      state.countries = countries;
     },
     filterByContinent(state, action) {
       const value = action.payload;
