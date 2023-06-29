@@ -70,35 +70,35 @@ export const filteredCountries = (continent) => {
 
     const countries = [];
 
-    if (continent.toLowerCase() === 'all'){
-        const countries = [];
+    if (continent.toLowerCase() === "all") {
+      const countries = [];
 
-    data.forEach((el) => {
-      const country = {
-        name: el.name.common,
-        continent: el.continents[0],
-        capitalCity: el.capital,
-        flag: el.flags.png,
-      };
-      countries.push(country);
-    });
-    dispatch(regionActions.addCountry(countries));
-    }else {
-        const filtered = data.filter((country) => {
-            return country.continents[0].toLowerCase() === continent.toLowerCase();
-          });
-          console.log(filtered);
-      
-          filtered.forEach((el) => {
-            const country = {
-              name: el.name.common,
-              continent: el.continents[0],
-              capitalCity: el.capital,
-              flag: el.flags.png,
-            };
-            countries.push(country);
-          });
-          dispatch(regionActions.addCountry(countries));
+      data.forEach((el) => {
+        const country = {
+          name: el.name.common,
+          continent: el.continents[0],
+          capitalCity: el.capital,
+          flag: el.flags.png,
+        };
+        countries.push(country);
+      });
+      dispatch(regionActions.addCountry(countries));
+    } else {
+      const filtered = data.filter((country) => {
+        return country.continents[0].toLowerCase() === continent.toLowerCase();
+      });
+      console.log(filtered);
+
+      filtered.forEach((el) => {
+        const country = {
+          name: el.name.common,
+          continent: el.continents[0],
+          capitalCity: el.capital,
+          flag: el.flags.png,
+        };
+        countries.push(country);
+      });
+      dispatch(regionActions.addCountry(countries));
     }
   };
 };

@@ -16,6 +16,15 @@ const Country = () => {
     dispatch(fetchSpecificCountry(params.name));
   }, [dispatch, params.name]);
 
+  useEffect(() => {
+    if (!country.name) return;
+    document.title = `Country | ${country.name}`;
+
+    return () => {
+      document.title = "Country Info";
+    };
+  }, [country.name]);
+
   return (
     <div className={styles["country-div"]}>
       <div className={styles.map}>
