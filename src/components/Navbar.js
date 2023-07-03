@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { filteredCountries, searchCountry } from "../store/fetch-actions";
@@ -7,6 +7,7 @@ import styles from "../sass/_navbar.module.scss";
 const Navbar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [filterValue, setFilterValue] = useState("");
+  const inputEl = useRef(null);
 
   const dispatch = useDispatch();
 
@@ -14,7 +15,20 @@ const Navbar = () => {
     setSearchValue(e.target.value);
   };
 
-  console.log(searchValue);
+  const callback = (e) => {
+    if (e.code === "Enter") {
+      inputEl.current.focus();
+      setSearchValue("");
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", callback);
+
+    return () => {
+      document.addEventListener("keydown", callback);
+    };
+  }, []);
 
   useEffect(() => {
     // dispatch(regionActions.searchCountry(searchValue));
@@ -56,6 +70,7 @@ const Navbar = () => {
             value={searchValue}
             onChange={inputSearch}
             placeholder="Search Country"
+            ref={inputEl}
           />
         </div>
       </header>
