@@ -64,7 +64,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**Countries Info** A clone of the Amazon.com website. Add to cart, edit user details.
+**Countries Info** Render live data from the public API. This web application displays the list of all countries and allows the user to click on a country of his/her choice and see some information about that country.
 
 ## 🛠 Built With
 
