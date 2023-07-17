@@ -87,7 +87,6 @@ export const filteredCountries = (continent) => {
       const filtered = data.filter((country) => {
         return country.continents[0].toLowerCase() === continent.toLowerCase();
       });
-      console.log(filtered);
 
       filtered.forEach((el) => {
         const country = {
